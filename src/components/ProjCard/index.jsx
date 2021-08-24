@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Project from '../Project';
 
 export default class ProjCard extends Component {
+  handleClick = () => {
+    this.props.changeAppState.setState({
+      load: <Project changeAppState={this.props.changeAppState} />,
+    });
+  };
   render() {
     return (
       <div>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card>
+          <Card.Header>Status</Card.Header>
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Trip name</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              With supporting text below as a natural lead-in to additional
+              content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button onClick={this.handleClick} variant="primary">
+              Go to Trip
+            </Button>
           </Card.Body>
         </Card>
       </div>
