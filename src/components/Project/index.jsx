@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Dash from '../Dash';
 import Nav from 'react-bootstrap/Nav';
-import Table from 'react-bootstrap/Table';
+import Record from '../Record';
+import Payment from '../Payment';
+
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +11,18 @@ import Container from 'react-bootstrap/Container';
 import BackToHome from '../BackToHome';
 
 export default class Project extends Component {
+  state = {
+    page: <Record />,
+  };
+
+  goToPayment = () => {
+    this.setState({ page: <Payment /> });
+  };
+
+  goToRecord = () => {
+    this.setState({ page: <Record /> });
+  };
+
   render() {
     return (
       <div>
@@ -22,54 +35,21 @@ export default class Project extends Component {
           <br />
 
           <h2>Yellow Stone</h2>
-          <Nav variant="tabs" defaultActiveKey="/project/record">
+          <Nav variant="tabs" defaultActiveKey="/record">
             <Nav.Item>
-              <Nav.Link href="/project/record">Record</Nav.Link>
+              <Nav.Link onClick={this.goToRecord} href="/record">
+                Record
+              </Nav.Link>
             </Nav.Item>
+
             <Nav.Item>
-              <Nav.Link href="/project/result">Result</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/project/payment">Payment</Nav.Link>
+              <Nav.Link onClick={this.goToPayment} href="/payment">
+                Payment
+              </Nav.Link>
             </Nav.Item>
           </Nav>
 
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Yuanyuan</th>
-                <th>Sarah</th>
-                <th>Evie</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Airbnb 06/21-06/23</td>
-                <td>$320</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Car rent</td>
-                <td></td>
-                <td>$600</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>$30</td>
-                <td></td>
-                <td>$30</td>
-              </tr>
-              <tr>
-                <td>Sum</td>
-                <td>$350</td>
-                <td>$600</td>
-                <td>$30</td>
-              </tr>
-            </tbody>
-          </Table>
+          {this.state.page}
 
           <Row>
             <Col>
@@ -88,7 +68,9 @@ export default class Project extends Component {
             <Col> </Col>
             <Col>
               {' '}
-              <Button variant="primary">Start Payment</Button>
+              <Button variant="primary" onClick={this.goToPayment}>
+                Start Payment
+              </Button>
             </Col>
           </Row>
         </Container>
