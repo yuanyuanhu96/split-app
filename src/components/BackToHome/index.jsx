@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Dash from '../Dash';
 
-export default class ProjCard extends Component {
+export default class BackToHome extends Component {
   handleClick = () => {
     this.props.changeAppState.setState({
       load: <Dash changeAppState={this.props.changeAppState} />,
@@ -11,8 +11,8 @@ export default class ProjCard extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClick} variant="light">
-          Back
+        <Button onClick={this.handleClick} variant="link">
+          {'<'} BACK
         </Button>
       </div>
     );

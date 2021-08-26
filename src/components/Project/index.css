@@ -1,0 +1,9 @@
+.button-group-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-header {
+  background: #f7e7ff;
+  margin-bottom: 10px;
+}

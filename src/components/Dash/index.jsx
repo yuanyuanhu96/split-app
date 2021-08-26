@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import ProjCard from '../ProjCard';
 import './index.css';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 import NewProj from '../NewProj';
 
 export default class Dash extends Component {
+  state = { project: [0, 0, 0] };
   handleClick = () => {
     this.props.changeAppState.setState({
       load: <NewProj changeAppState={this.props.changeAppState} />,
@@ -18,33 +17,19 @@ export default class Dash extends Component {
   render() {
     return (
       <div>
-        <header>
-          <Button onClick={this.handleClick}>Add New Trip</Button>
-        </header>
+        <div className="dash-header">
+          <Container>
+            <h1> TripKeeper</h1>
+            <h5>Split trip expenses with friend</h5>
+            <br />
+            <Button onClick={this.handleClick}>Add New Trip</Button>
+          </Container>
+        </div>
         <br />
         <Container>
-          <Row>
-            <Col>
-              {' '}
-              <ProjCard changeAppState={this.props.changeAppState} />
-            </Col>
-            <Col>
-              {' '}
-              <ProjCard changeAppState={this.props.changeAppState} />
-            </Col>
-          </Row>
-          <br />
-
-          <Row>
-            <Col>
-              {' '}
-              <ProjCard changeAppState={this.props.changeAppState} />
-            </Col>
-            <Col>
-              {' '}
-              <ProjCard changeAppState={this.props.changeAppState} />
-            </Col>
-          </Row>
+          {this.state.project.map((element) => (
+            <ProjCard changeAppState={this.props.changeAppState} />
+          ))}
         </Container>
       </div>
     );
