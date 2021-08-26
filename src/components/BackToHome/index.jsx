@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Dash from '../Dash';
+import './index.css';
 
 export default class BackToHome extends Component {
   handleClick = () => {
@@ -11,8 +12,12 @@ export default class BackToHome extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClick} variant="link">
-          {'<'} BACK
+        <Button
+          className="back-button"
+          onClick={this.handleClick}
+          variant="link"
+        >
+          &larr; BACK
         </Button>
       </div>
     );

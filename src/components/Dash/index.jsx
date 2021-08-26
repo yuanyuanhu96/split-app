@@ -20,7 +20,7 @@ export default class Dash extends Component {
         <div className="dash-header">
           <Container>
             <h1> TripKeeper</h1>
-            <h5>Split trip expenses with friend</h5>
+            <h5>Split trip expenses with friends</h5>
             <br />
             <Button onClick={this.handleClick}>Add New Trip</Button>
           </Container>

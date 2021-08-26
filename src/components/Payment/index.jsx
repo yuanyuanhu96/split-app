@@ -13,7 +13,8 @@ export default class Payment extends Component {
       <div>
         <br />
         You don't have payment method <br />
-        <Button variant="primary" onClick={this.openModal}>
+        <br />
+        <Button variant="outline-primary" onClick={this.openModal}>
           {' '}
           Add Payment info{' '}
         </Button>
