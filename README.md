@@ -2,7 +2,7 @@
 
 ### TripKeeper helps you seamlessly split travel expenses with your friends.
 
-![alt text](./public.demo.gif)
+![alt text](https://yuanyuanhu96.github.io/split-demo.gif)
 
 Updated 8/25/2021
 
