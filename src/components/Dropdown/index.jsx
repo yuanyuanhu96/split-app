@@ -58,12 +58,11 @@ export default class CustomizeDropdown extends Component {
         </Dropdown.Toggle>
 
         <Dropdown.Menu as={this.CustomMenu}>
-          <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-          <Dropdown.Item eventKey="3" active>
-            Orange
-          </Dropdown.Item>
-          <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
+          <Dropdown.Item eventKey="1">Shiya</Dropdown.Item>
+          <Dropdown.Item eventKey="2">Jessica</Dropdown.Item>
+          <Dropdown.Item eventKey="3">Evie</Dropdown.Item>
+          <Dropdown.Item eventKey="4">Alex</Dropdown.Item>
+          <Dropdown.Item eventKey="5">Ananya</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     );

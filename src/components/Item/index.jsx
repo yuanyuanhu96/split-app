@@ -32,8 +32,14 @@ export default class Item extends Component {
       <tr>
         <td className="item-name">
           {this.state.itemName}
-          <Button onClick={this.deleteItem} variant="link">
+          &nbsp; &nbsp;
+          <Button
+            className="delete-while-hover"
+            onClick={this.deleteItem}
+            variant="link"
+          >
             Delete
+            {/* &times; */}
           </Button>
         </td>
         {this.state.itemCost.map((element) => (
