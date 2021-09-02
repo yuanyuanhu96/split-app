@@ -27,11 +27,8 @@ export default class Project extends Component {
         <header className="project-header">
           <Container>
             <BackToHome changeAppState={this.props.changeAppState} />
-            <br />
-
             <h2>Yellow Stone</h2>
-
-            <br />
+            <br /> <br />
             <Nav variant="tabs" defaultActiveKey="/record">
               <Nav.Item>
                 <Nav.Link onClick={this.goToRecord} href="/record">

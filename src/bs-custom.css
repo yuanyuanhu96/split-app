@@ -1,18 +1,18 @@
 .btn-primary {
-  background-color: #4b1cc3;
-  border: #4b1cc3;
+  background-color: #5d39b7;
+  border: #5d39b7;
   color: white;
   border-radius: 20px;
 }
 
 .btn-primary:hover {
-  background-color: #484072;
-  border: #484072;
+  background-color: #662aff;
+  border: #662aff;
   color: white;
 }
 .btn-primary:focus {
-  background-color: #484072;
-  border: #484072;
+  background-color: #662aff;
+  border: #662aff;
   color: white;
 }
 
@@ -24,16 +24,16 @@
 }
 
 .btn-outline-primary {
-  border: #4b1cc3;
-  color: #4b1cc3;
+  border: #5d39b7;
+  color: #5d39b7;
   border-style: solid;
   border-width: 1.5px;
   border-radius: 20px;
 }
 
 .btn-outline-primary:hover {
-  border: #4b1cc3;
-  background-color: #4b1cc3;
+  border: #5d39b7;
+  background-color: #5d39b7;
 
   border-style: solid;
   border-width: 1.5px;
@@ -43,8 +43,27 @@
 
 .btn-link {
   border-style: solid;
-  border-width: 1.5px;
-  border-radius: 20px;
-  color: #4b1cc3;
+  border-radius: 0;
+  color: #5d39b7;
+  text-decoration: none;
+  padding: 5px 5px;
+}
+.btn-link:hover {
+  color: #662aff;
+}
+
+.nav-link {
+  color: #5d39b7;
+}
+.nav-link:hover {
+  color: #662aff;
+}
+
+.container {
+  overflow: scroll;
+}
+
+a {
+  color: #5d39b7;
   text-decoration: none;
 }

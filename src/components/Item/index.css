@@ -1,0 +1,25 @@
+.editable-td {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: transparent;
+  border-radius: 4px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.editable-td:hover,
+.editable-td:focus {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+}
+
+.item-data {
+  display: flex;
+  align-items: center;
+}

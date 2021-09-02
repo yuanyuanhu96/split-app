@@ -18,7 +18,7 @@ export default class TopNav extends Component {
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
-                Signed in as: <a href="#login">Mark Otto</a>
+                Signed in as: <a href="#login">Yuanyuan</a>
               </Navbar.Text>
             </Navbar.Collapse>
           </Container>

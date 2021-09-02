@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Item from '../Item';
+import './index.css';
 
 export default class Record extends Component {
   state = {
@@ -10,7 +11,7 @@ export default class Record extends Component {
     // LinedItems saves all the expenses
     linedItems: [
       ['Airbnb 06/21-06/23', 20, 0, 0],
-      ['Car rent	', 6, 40, 0],
+      ['Car rent', 6, 40, 0],
       ['Gas', 30, 0, 30],
     ],
     sum: [],
@@ -91,7 +92,7 @@ export default class Record extends Component {
   render() {
     return (
       <div>
-        <Table striped bordered hover>
+        <Table className="record-table" striped bordered>
           {/* Table header is friends name */}
           <thead>
             <tr>
@@ -109,11 +110,7 @@ export default class Record extends Component {
             {/* Add new item button take a row */}
             <tr>
               <td colSpan="4">
-                <Button
-                  className="back-button"
-                  onClick={this.addItem}
-                  variant="link"
-                >
+                <Button onClick={this.addItem} variant="link">
                   + New Item
                 </Button>
               </td>
@@ -123,12 +120,12 @@ export default class Record extends Component {
             {/* Sum and over pay shows the process of calculations */}
             <tr>
               {this.state.sum.map((element) => (
-                <th>{element}</th>
+                <td>{element}</td>
               ))}
             </tr>
             <tr>
               {this.state.overPay.map((element) => (
-                <th>{element}</th>
+                <td>{element}</td>
               ))}
             </tr>
           </tbody>

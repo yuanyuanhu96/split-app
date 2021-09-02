@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
 import Project from '../Project';
 import BackToHome from '../BackToHome';
+import Dropdown from '../Dropdown';
 
 import Container from 'react-bootstrap/Container';
 
 export default class NewProj extends Component {
+  state = { friend: [1, 1, 1] };
+
   handleClick = () => {
     this.props.changeAppState.setState({
       load: <Project changeAppState={this.props.changeAppState} />,
     });
+  };
+
+  addItem = () => {
+    let { friend } = this.state;
+    friend.push(1);
+    this.setState(friend);
   };
 
   render() {
@@ -24,15 +32,14 @@ export default class NewProj extends Component {
 
           <Form>
             <br />
-            <br />
             <Form.Control size="lg" type="text" placeholder="Name your Trip" />
             <br />
-            <h4>Select Friends</h4>
-            <br />
+            <b>Invite Friends</b> <br /> <br />
             <Dropdown>
-              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                people
-              </Dropdown.Toggle>
+              <Dropdown.Toggle
+                variant="secondary"
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Sarah</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Megan</Dropdown.Item>
@@ -41,10 +48,17 @@ export default class NewProj extends Component {
               </Dropdown.Menu>
             </Dropdown>
             <br />
-            <h4>Add Friends</h4> <br />
-            <Form.Control type="text" placeholder="Name" />
-            <br />
-            <Form.Control type="email" placeholder="Enter email" />
+            {this.state.friend.map(() => (
+              <div>
+                <Form.Control type="email" placeholder="Enter email" />
+                <br />
+              </div>
+            ))}
+            <div>
+              <Button onClick={this.addItem} variant="link">
+                + Add Friend
+              </Button>
+            </div>
             <br />
             <Button variant="secondary" type="discard">
               Discard
