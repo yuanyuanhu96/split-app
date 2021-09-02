@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Item from '../Item';
 
 export default class Record extends Component {
   state = {
     page: 'record',
     people: ['', 'Yuanyuan', 'Sarah', 'Evie'],
+    // LinedItems saves all the expenses
     linedItems: [
       ['Airbnb 06/21-06/23', 20, 0, 0],
       ['Car rent	', 6, 40, 0],
@@ -79,10 +82,17 @@ export default class Record extends Component {
     this.calculate();
   }
 
+  addItem = () => {
+    let { linedItems } = this.state;
+    linedItems.push(['Item Name', 0, 0, 0]);
+    this.setState(linedItems);
+  };
+
   render() {
     return (
       <div>
         <Table striped bordered hover>
+          {/* Table header is friends name */}
           <thead>
             <tr>
               {this.state.people.map((person) => (
@@ -90,14 +100,27 @@ export default class Record extends Component {
               ))}
             </tr>
           </thead>
+          {/* Table rows is Items and money paied by earch person */}
           <tbody>
-            {this.state.linedItems.map((Item) => (
-              <tr>
-                {Item.map((element) => (
-                  <td>{element}</td>
-                ))}
-              </tr>
+            {this.state.linedItems.map((element) => (
+              <Item item={element} />
             ))}
+
+            {/* Add new item button take a row */}
+            <tr>
+              <td colSpan="4">
+                <Button
+                  className="back-button"
+                  onClick={this.addItem}
+                  variant="link"
+                >
+                  + New Item
+                </Button>
+              </td>
+            </tr>
+
+            <br />
+            {/* Sum and over pay shows the process of calculations */}
             <tr>
               {this.state.sum.map((element) => (
                 <th>{element}</th>
