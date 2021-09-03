@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Project from '../Project';
-import BackToHome from '../BackToHome';
 import Dropdown from '../Dropdown';
-
-import Container from 'react-bootstrap/Container';
+import Modal from 'react-bootstrap/Modal';
+import lgShow from 'react-bootstrap/Modal';
 
 export default class NewProj extends Component {
   state = { friend: [1, 1, 1] };
 
-  handleClick = () => {
+  creatProject = () => {
     this.props.changeAppState.setState({
       load: <Project changeAppState={this.props.changeAppState} />,
     });
+  };
+
+  close = () => {
+    this.props.payment.setState({ modal: false });
   };
 
   addItem = () => {
@@ -25,50 +28,65 @@ export default class NewProj extends Component {
   render() {
     return (
       <div>
-        <Container>
-          <br />
-
-          <BackToHome changeAppState={this.props.changeAppState} />
-
-          <Form>
-            <br />
-            <Form.Control size="lg" type="text" placeholder="Name your Trip" />
-            <br />
-            <b>Invite Friends</b> <br /> <br />
-            <Dropdown>
-              <Dropdown.Toggle
-                variant="secondary"
-                id="dropdown-basic"
-              ></Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Sarah</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Megan</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Yuanyuan</Dropdown.Item>
-                <Dropdown.Item href="#/action-4">Evie</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <br />
-            {this.state.friend.map(() => (
+        <Modal
+          size="lg"
+          show={lgShow}
+          aria-labelledby="example-modal-sizes-title-lg"
+        >
+          <Modal.Header closeButton onClick={this.close}>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Payment Method
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <br />
+              <Form.Control
+                size="lg"
+                type="text"
+                placeholder="Name your Trip"
+              />
+              <br />
+              <b>Invite Friends</b> <br /> <br />
+              <Dropdown>
+                <Dropdown.Toggle
+                  variant="secondary"
+                  id="dropdown-basic"
+                ></Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Sarah</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Megan</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Yuanyuan</Dropdown.Item>
+                  <Dropdown.Item href="#/action-4">Evie</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <br />
+              {this.state.friend.map(() => (
+                <div>
+                  <Form.Control type="email" placeholder="Enter email" />
+                  <br />
+                </div>
+              ))}
               <div>
-                <Form.Control type="email" placeholder="Enter email" />
-                <br />
+                <Button onClick={this.addItem} variant="link">
+                  + Add Friend
+                </Button>
               </div>
-            ))}
-            <div>
-              <Button onClick={this.addItem} variant="link">
-                + Add Friend
+              <br />
+              <Button variant="secondary" type="discard">
+                Discard
               </Button>
-            </div>
-            <br />
-            <Button variant="secondary" type="discard">
-              Discard
-            </Button>
-            <span>&nbsp;</span>
-            <Button onClick={this.handleClick} variant="primary" type="submit">
-              Create Project
-            </Button>
-          </Form>
-        </Container>
+              <span>&nbsp;</span>
+              <Button
+                onClick={this.creatProject}
+                variant="primary"
+                type="submit"
+              >
+                Create Project
+              </Button>
+            </Form>
+          </Modal.Body>
+        </Modal>
       </div>
     );
   }

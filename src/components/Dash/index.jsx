@@ -8,12 +8,9 @@ import NewProj from '../NewProj';
 
 export default class Dash extends Component {
   state = { project: [0, 0, 0] };
-  handleClick = () => {
-    this.props.changeAppState.setState({
-      load: <NewProj changeAppState={this.props.changeAppState} />,
-    });
+  openModal = () => {
+    this.setState({ modal: true });
   };
-
   render() {
     return (
       <div>
@@ -22,7 +19,7 @@ export default class Dash extends Component {
             <h1> TripKeeper</h1>
             <h5>Split trip expenses with friends</h5>
             <br />
-            <Button onClick={this.handleClick}>Add New Trip</Button>
+            <Button onClick={this.openModal}>Add New Trip</Button>
           </Container>
         </div>
         <br />
@@ -31,6 +28,21 @@ export default class Dash extends Component {
             <ProjCard changeAppState={this.props.changeAppState} />
           ))}
         </Container>
+        {(() => {
+          switch (this.state.modal) {
+            case true:
+              return (
+                <NewProj
+                  payment={this}
+                  changeAppState={this.props.changeAppState}
+                />
+              );
+            case false:
+              return '';
+            default:
+              return '';
+          }
+        })()}
       </div>
     );
   }
