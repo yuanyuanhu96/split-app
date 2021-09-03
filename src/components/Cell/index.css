@@ -1,0 +1,15 @@
+.data-cell {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: transparent;
+  border-radius: 4px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.data-cell:hover,
+.data-cell:focus {
+  border: 1px solid #ccc;
+  background-color: white;
+}

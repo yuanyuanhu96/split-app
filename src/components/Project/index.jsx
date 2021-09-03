@@ -42,10 +42,10 @@ export default class Project extends Component {
       (item) => item.time !== this.item.time
     );
     this.project.setState({ linedItems: newItems });
-    console.log(this);
   }
 
-  editItem = () => {
+  editItem = (event) => {
+    console.log(event);
     this.setState();
   };
 

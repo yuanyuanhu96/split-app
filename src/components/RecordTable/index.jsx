@@ -7,7 +7,7 @@ import './index.css';
 export default class RecordTable extends Component {
   render() {
     return (
-      <div>
+      <div className="scroll-table">
         <Table className="record-table" bordered>
           {/* Table header is friends name */}
           <thead>

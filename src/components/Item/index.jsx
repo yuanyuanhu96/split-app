@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import Cell from '../Cell';
 
 import './index.css';
 
 export default class Item extends Component {
   render() {
-    const { name, spent } = this.props.item;
+    const { name } = this.props.item;
 
     return (
       <tr>
@@ -27,29 +28,14 @@ export default class Item extends Component {
             Delete
           </Button>
         </td>
-        {spent.map((data) =>
-          data === 0 ? (
-            <td>
-              <input
-                className="editable-td"
-                type="number"
-                id="fname"
-                name="fname"
-                placeholder="0"
-              />
-            </td>
-          ) : (
-            <td>
-              <input
-                className="editable-td"
-                type="number"
-                id="fname"
-                name="fname"
-                defaultValue={data}
-              />
-            </td>
-          )
-        )}
+
+        {this.props.item.spent.map((value, i) => (
+          <Cell
+            value={value}
+            editItem={this.props.editItem}
+            id={this.props.item.time + '-' + i}
+          />
+        ))}
       </tr>
     );
   }
