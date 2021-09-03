@@ -10,16 +10,11 @@ import calculator from './calculator';
 
 export default class Project extends Component {
   state = {
-    people: ['', 'Yuanyuan', 'Sarah', 'Evie'],
+    people: ['Yuanyuan', 'Sarah', 'Evie'],
     // LinedItems saves all the expenses
     projectName: 'Yellow Stone ',
-    linedItems: [
-      { name: 'Airbnb 06/21-06/23', spent: [20, 0, 0] },
-      { name: 'Airbnb 06/21-06/23', spent: [20, 80, 0] },
-      { name: 'Airbnb 06/21-06/23', spent: [20, 0, 90] },
-    ],
-    sum: [],
-    overPay: [],
+    linedItems: [{ name: 'Airbnb', spent: [100, 0, 0], time: 0 }],
+
     result: [{}],
     isRecord: true,
   };
@@ -27,13 +22,31 @@ export default class Project extends Component {
   componentDidMount() {
     let { people, linedItems } = this.state;
     let newResult = calculator(people, linedItems);
+    console.log(newResult);
+
     this.setState({ result: newResult });
   }
 
   addItem = () => {
     let { linedItems } = this.state;
-    linedItems.push(['Item Name', 0, 0, 0]);
+    linedItems.push({
+      name: 'new item',
+      spent: [0, 0, 0],
+      time: Date.now(),
+    });
     this.setState(linedItems);
+  };
+
+  deleteItem() {
+    const newItems = this.linedItems.filter(
+      (item) => item.time !== this.item.time
+    );
+    this.project.setState({ linedItems: newItems });
+    console.log(this);
+  }
+
+  editItem = () => {
+    this.setState();
   };
 
   goToPayment = () => {
@@ -60,9 +73,12 @@ export default class Project extends Component {
             people={this.state.people}
             linedItems={this.state.linedItems}
             addItem={this.addItem}
+            deleteItem={this.deleteItem}
+            editItem={this.editItem}
+            project={this}
           />
 
-          {/* <Result result={this.state.result} /> */}
+          <Result result={this.state.result} />
 
           <div class="button-group-end">
             <Button variant="primary" onClick={this.goToPayment}>

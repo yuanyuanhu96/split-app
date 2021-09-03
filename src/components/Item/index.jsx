@@ -4,32 +4,52 @@ import Button from 'react-bootstrap/Button';
 import './index.css';
 
 export default class Item extends Component {
-  deleteItem = () => {};
   render() {
+    const { name, spent } = this.props.item;
+
     return (
       <tr>
         <td className="item-name">
-          {this.props.item.name}
-          &nbsp; &nbsp;
+          <input
+            className="editable-td"
+            type="text"
+            id="fname"
+            name="fname"
+            defaultValue={name}
+          />
           <Button
+            id={this.props.item.time}
             className="delete-while-hover"
-            onClick={this.deleteItem}
+            onClick={(id) => this.props.deleteItem(id)}
             variant="link"
+            project={this.props.project}
           >
             Delete
           </Button>
         </td>
-        {this.props.item.spent.map((data) => (
-          <td>
-            <input
-              className="editable-td"
-              type="text"
-              id="fname"
-              name="fname"
-              defaultValue={data}
-            />
-          </td>
-        ))}
+        {spent.map((data) =>
+          data === 0 ? (
+            <td>
+              <input
+                className="editable-td"
+                type="number"
+                id="fname"
+                name="fname"
+                placeholder="0"
+              />
+            </td>
+          ) : (
+            <td>
+              <input
+                className="editable-td"
+                type="number"
+                id="fname"
+                name="fname"
+                defaultValue={data}
+              />
+            </td>
+          )
+        )}
       </tr>
     );
   }

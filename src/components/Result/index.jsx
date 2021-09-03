@@ -7,11 +7,17 @@ export default class Result extends Component {
       <div className="result-block">
         <b>Result</b>
         <ul>
-          {this.props.result.map((element) => (
-            <li>
-              {element.from} need to pay {element.amount} to {element.to}
-            </li>
-          ))}
+          {this.props.result.map((element, i) =>
+            element.ifPay ? (
+              <li key={i}>
+                {element.subject} need to pay {-element.amount}
+              </li>
+            ) : (
+              <li key={i}>
+                {element.subject} need to recieve {element.amount}
+              </li>
+            )
+          )}
         </ul>
       </div>
     );

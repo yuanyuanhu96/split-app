@@ -12,6 +12,11 @@ export default class RecordTable extends Component {
           {/* Table header is friends name */}
           <thead>
             <tr>
+              <th>
+                &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{' '}
+                &nbsp; &nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </th>
               {this.props.people.map((person) => (
                 <th>{person}</th>
               ))}
@@ -21,7 +26,13 @@ export default class RecordTable extends Component {
           {/* Table rows is Items and money paied by earch person */}
           <tbody>
             {this.props.linedItems.map((element) => (
-              <Item item={element} />
+              <Item
+                linedItems={this.props.linedItems}
+                item={element}
+                deleteItem={this.props.deleteItem}
+                editItem={this.props.editItem}
+                project={this.props.project}
+              />
             ))}
 
             {/* Add new item button take a row */}
