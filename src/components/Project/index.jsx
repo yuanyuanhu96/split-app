@@ -14,9 +14,9 @@ export default class Project extends Component {
     // LinedItems saves all the expenses
     projectName: 'Yellow Stone ',
     linedItems: [
-      ['Airbnb 06/21-06/23', 20, 0, 0],
-      ['Car rent', 600, 40, 0],
-      ['Gas', 30, 0, 30],
+      { name: 'Airbnb 06/21-06/23', spent: [20, 0, 0] },
+      { name: 'Airbnb 06/21-06/23', spent: [20, 80, 0] },
+      { name: 'Airbnb 06/21-06/23', spent: [20, 0, 90] },
     ],
     sum: [],
     overPay: [],
@@ -62,7 +62,7 @@ export default class Project extends Component {
             addItem={this.addItem}
           />
 
-          <Result result={this.state.result} />
+          {/* <Result result={this.state.result} /> */}
 
           <div class="button-group-end">
             <Button variant="primary" onClick={this.goToPayment}>
