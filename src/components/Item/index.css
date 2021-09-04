@@ -1,6 +1,3 @@
-
-
-
 .item-name {
   display: flex;
   align-items: center;
@@ -11,14 +8,12 @@
   align-items: center;
 }
 
-.delete-while-hover {
-  color: rgba(0, 0, 0, 0);
-  padding: 0 6px;
-  border-radius: 5px;
+.record-row .delete-button {
+  border: none;
+  visibility: hidden;
 }
 
-.delete-while-hover:hover {
-  color: rgba(195, 0, 0);
-  background-color: rgb(195, 0, 0, 0.05);
-  border-radius: 5px;
+.record-row:hover .delete-button {
+  border: none;
+  visibility: visible;
 }

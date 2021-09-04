@@ -3,7 +3,7 @@ export default function calculator(people, linedItems) {
   const average = avg(personSum);
   const overPaid = over(average, personSum);
   const result = trans(people, overPaid);
-  return result;
+  return [result, personSum];
 }
 
 function sum(linedItems) {
@@ -11,7 +11,7 @@ function sum(linedItems) {
   for (let i = 0; i < 3; i++) {
     personSum.push(0);
     linedItems.forEach((item) => {
-      personSum[i] += item.spent[i];
+      personSum[i] += parseInt(item.spent[i]);
     });
   }
   return personSum;

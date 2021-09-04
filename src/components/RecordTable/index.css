@@ -1,3 +1,10 @@
 .scroll-table {
   overflow: scroll;
 }
+
+.process-row {
+  background-color: #f3f3f3;
+}
+.new-item-row {
+  border: none;
+}

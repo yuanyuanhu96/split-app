@@ -14,17 +14,21 @@ export default class Project extends Component {
     // LinedItems saves all the expenses
     projectName: 'Yellow Stone ',
     linedItems: [{ name: 'Airbnb', spent: [100, 0, 0], time: 0 }],
-
+    sum: [],
     result: [{}],
     isRecord: true,
   };
 
   componentDidMount() {
-    let { people, linedItems } = this.state;
-    let newResult = calculator(people, linedItems);
-    console.log(newResult);
+    this.calculate();
+  }
 
-    this.setState({ result: newResult });
+  calculate() {
+    let { people, linedItems } = this.state;
+    let newResult = calculator(people, linedItems)[0];
+    let newSum = calculator(people, linedItems)[1];
+    console.log(newResult);
+    this.setState({ result: newResult, sum: newSum });
   }
 
   addItem = () => {
@@ -37,16 +41,36 @@ export default class Project extends Component {
     this.setState(linedItems);
   };
 
-  deleteItem() {
-    const newItems = this.linedItems.filter(
-      (item) => item.time !== this.item.time
-    );
-    this.project.setState({ linedItems: newItems });
-  }
+  deleteItem = (event) => {
+    const { id } = event.target;
+    const idSplited = id.split('-');
+    const time = parseInt(idSplited[0]);
+    const newItems = this.state.linedItems.filter((item) => item.time !== time);
+    this.setState({ linedItems: newItems });
+    console.log(event);
+  };
 
   editItem = (event) => {
-    console.log(event);
-    this.setState();
+    // Parsing tartget id
+    const { id, value } = event.target;
+    const idSplited = id.split('-');
+    const time = parseInt(idSplited[0]);
+    const i = parseInt(idSplited[1]);
+    //finding this item
+    const itemIndex = this.state.linedItems.findIndex(
+      (item) => item.time === time
+    );
+    const newItems = this.state.linedItems;
+
+    if (event.target.type === 'number') {
+      newItems[itemIndex].spent[i] = parseInt(value);
+      this.calculate();
+    } else if (event.target.type === 'text') {
+      newItems[itemIndex].name = value;
+    }
+
+    this.setState({ linedItems: newItems });
+    console.log(event.target.type);
   };
 
   goToPayment = () => {
@@ -72,6 +96,7 @@ export default class Project extends Component {
           <RecordTable
             people={this.state.people}
             linedItems={this.state.linedItems}
+            sum={this.state.sum}
             addItem={this.addItem}
             deleteItem={this.deleteItem}
             editItem={this.editItem}

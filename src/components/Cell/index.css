@@ -6,10 +6,16 @@
   color: black;
   display: flex;
   align-items: center;
+  width: fit-content;
 }
 
 .data-cell:hover,
 .data-cell:focus {
   border: 1px solid #ccc;
   background-color: white;
+}
+
+.item-name {
+  border-left: none;
+  border-right: none;
 }

@@ -8,15 +8,11 @@ export default class RecordTable extends Component {
   render() {
     return (
       <div className="scroll-table">
-        <Table className="record-table" bordered>
+        <Table className="record-table" bordered responsive>
           {/* Table header is friends name */}
           <thead>
             <tr>
-              <th>
-                &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{' '}
-                &nbsp; &nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </th>
+              <th colSpan="2"></th>
               {this.props.people.map((person) => (
                 <th>{person}</th>
               ))}
@@ -27,6 +23,8 @@ export default class RecordTable extends Component {
           <tbody>
             {this.props.linedItems.map((element) => (
               <Item
+                key={element.time}
+                id={element.time}
                 linedItems={this.props.linedItems}
                 item={element}
                 deleteItem={this.props.deleteItem}
@@ -36,8 +34,17 @@ export default class RecordTable extends Component {
             ))}
 
             {/* Add new item button take a row */}
+            <tr className="process-row">
+              <td></td>
+              <td>
+                <b>Total Paid</b>
+              </td>
+              {this.props.sum.map((data) => (
+                <td>{data}</td>
+              ))}
+            </tr>
             <tr>
-              <td colSpan="4">
+              <td colSpan="5" class="new-item-row">
                 <Button onClick={this.props.addItem} variant="link">
                   + New Item
                 </Button>
