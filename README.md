@@ -11,13 +11,9 @@ This app is a side project I started recently. The design was inspired by my exp
 ## Demo
 
 <p align="center">
-  <img src="https://yuanyuanhu96.github.io/share/split-demo-v3.gif" />
+  <img src="https://yuanyuanhu96.github.io/share/domo3.gif" />
 </p>
 
-<!-- ![split-demo](https://yuanyuanhu96.github.io/share/split-demo-v3.gif)
- -->
-<!-- ## UI Audit
-![ui-audit](https://yuanyuanhu96.github.io/share/ui-audit.png)
 
 
  -->
