@@ -1,5 +1,6 @@
 # TripKeeper
 
+![concept](https://yuanyuanhu96.github.io/concept.png)
 
 
 ### TripKeeper helps you seamlessly split travel expenses with your friends.
