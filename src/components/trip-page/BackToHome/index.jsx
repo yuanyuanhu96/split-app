@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
-import Dash from '../Dash';
+import Dash from '../../home-page/Dash';
 import './index.css';
 
 export default class BackToHome extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Dash from '../Dash';
-import IconFinder from '../IconFinder';
+import IconFinder from '../../IconFinder';
 
 import './index.css';
 

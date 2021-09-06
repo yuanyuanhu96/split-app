@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Project from '../Project';
-import IconFinder from '../IconFinder';
+import Project from '../../trip-page/Project';
+import IconFinder from '../../IconFinder';
 import './index.css';
 
 export default class ProjCard extends Component {
