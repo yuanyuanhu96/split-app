@@ -1,5 +1,3 @@
-# TripKeeper
-
 ![concept](https://yuanyuanhu96.github.io/keyshot.png)
 
 
@@ -13,5 +11,5 @@ This app is a side project I started recently. The design was inspired by my exp
 ## Demo
 ![split-demo](https://yuanyuanhu96.github.io/split-demo.gif)
 
-## UI Autid
+## UI Autit
 ![ui-audit](https://yuanyuanhu96.github.io/ui-audit.png)
