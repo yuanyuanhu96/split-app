@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Dash from '../Dash';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
+import IconFinder from '../IconFinder';
+
+import './index.css';
 
 export default class TopNav extends Component {
   handleClick = () => {
@@ -11,18 +12,9 @@ export default class TopNav extends Component {
   };
   render() {
     return (
-      <div>
-        <Navbar>
-          <Container>
-            <Navbar.Brand href="#home">Logo</Navbar.Brand>
-            <Navbar.Toggle />
-            <Navbar.Collapse className="justify-content-end">
-              <Navbar.Text>
-                Signed in as: <a href="#login">Yuanyuan</a>
-              </Navbar.Text>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+      <div className="app-nav">
+        <IconFinder className="menu" name="menu" />
+        <IconFinder className="avatar" name="avatar" href="#home" />
       </div>
     );
   }

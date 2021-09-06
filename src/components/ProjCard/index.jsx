@@ -14,14 +14,13 @@ export default class ProjCard extends Component {
     return (
       <div>
         <Card className="proj-card">
-          <Card.Header>Status</Card.Header>
           <Card.Body>
             <Card.Title>Trip name</Card.Title>
             <Card.Text>
               With supporting text below as a natural lead-in to additional
               content.
             </Card.Text>
-            <Button onClick={this.handleClick} variant="outline-primary">
+            <Button onClick={this.handleClick} variant="link">
               Go to Trip
             </Button>
           </Card.Body>

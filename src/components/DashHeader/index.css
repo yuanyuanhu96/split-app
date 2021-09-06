@@ -1,0 +1,22 @@
+.hero-text {
+  padding: 20px 20px;
+  color: white;
+  text-align: left;
+}
+
+.fab-container {
+  position: relative;
+  top: 30px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+}
+
+.fab-container > .fab-placeholder {
+  flex: auto;
+}
+
+.fab-container > .fab {
+  flex: 48px;
+  text-align: right;
+}

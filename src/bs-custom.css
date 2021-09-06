@@ -2,25 +2,28 @@
   background-color: #5d39b7;
   border: #5d39b7;
   color: white;
-  border-radius: 20px;
+  padding: 6px 16px;
+  border-radius: 18px;
+  font-weight: 500;
 }
 
 .btn-primary:hover {
-  background-color: #662aff;
-  border: #662aff;
+  background-color: #5d39b7;
+  border: #5d39b7;
   color: white;
 }
 .btn-primary:focus {
-  background-color: #662aff;
-  border: #662aff;
+  background-color: #5d39b7;
+  border: #5d39b7;
   color: white;
 }
 
 .btn-secondary {
-  border-radius: 20px;
+  border-radius: 18px;
+  font-weight: 500;
 }
 .btn-light {
-  border-radius: 20px;
+  border-radius: 18px;
 }
 
 .btn-outline-primary {
@@ -28,7 +31,7 @@
   color: #5d39b7;
   border-style: solid;
   border-width: 1.5px;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 
 .btn-outline-primary:hover {
@@ -37,7 +40,7 @@
 
   border-style: solid;
   border-width: 1.5px;
-  border-radius: 20px;
+  border-radius: 18px;
   color: white;
 }
 
@@ -46,17 +49,18 @@
   border-radius: 0;
   color: #5d39b7;
   text-decoration: none;
-  padding: 5px 5px;
+  font-weight: 500;
+  padding: 0 0;
 }
 .btn-link:hover {
-  color: #662aff;
+  color: #5d39b7;
 }
 
 .nav-link {
   color: #5d39b7;
 }
 .nav-link:hover {
-  color: #662aff;
+  color: #5d39b7;
 }
 
 a {
