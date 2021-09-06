@@ -1,3 +1,11 @@
+.dash-header {
+  text-align: center;
+  /* background: #5d39b7; */
+  background-image: url('./dash-header.png');
+  background-size: 100%;
+  background-position: center;
+}
+
 .hero-text {
   padding: 20px 20px;
   color: white;

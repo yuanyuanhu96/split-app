@@ -4,13 +4,14 @@ import './index.css';
 export default class FloatingButton extends Component {
   render() {
     return (
-      
       <svg
+        className="svg-button"
         width="58"
         height="59"
         viewBox="0 0 58 59"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        onClick={this.props.openModal}
       >
         <g filter="url(#filter0_d)">
           <rect x="5" y="3" width="48" height="48" rx="23.4" fill="#FFCD1E" />

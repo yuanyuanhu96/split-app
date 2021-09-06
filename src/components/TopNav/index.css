@@ -1,16 +1,15 @@
 .app-nav {
-  font-size: 16px;
-  color: #ffffff;
+  position: relative;
   display: flex;
   flex-direction: row;
   padding: 10px 0;
 }
 
-.menu {
-  flex: 36px;
+.app-nav > .menu {
+  flex: auto;
   text-align: left;
 }
-.avatar {
+.app-nav > .avatar {
   flex: 36px;
   text-align: right;
 }

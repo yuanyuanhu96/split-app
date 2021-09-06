@@ -18,9 +18,10 @@ export default class ProjCard extends Component {
         {/* Project header,will become an componnet */}
         <header className="project-header">
           <Container>
-            <BackToHome changeAppState={this.props.changeAppState} />
-            <h2>{this.props.projectName}</h2>
-            <br />
+            <div className="proj-nav">
+              <BackToHome changeAppState={this.props.changeAppState} />
+              <h3 className="inline-h">{this.props.projectName}</h3>
+            </div>
             {/* Navigation tab switch between record and payment */}
             <Nav variant="tabs" defaultActiveKey="/record">
               <Nav.Item>

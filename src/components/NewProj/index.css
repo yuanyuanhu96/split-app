@@ -1,0 +1,18 @@
+.modal-action {
+  display: flex;
+  flex-direction: row;
+}
+.modal-action > .nudge-block {
+  flex: auto;
+}
+.modal-action > .button-group {
+  flex: auto;
+  text-align: end;
+}
+.button-group {
+  position: relative;
+  left: 5px;
+}
+.button-group > * {
+  margin: 0 5px;
+}

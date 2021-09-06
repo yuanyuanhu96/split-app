@@ -13,7 +13,9 @@ export default class TopNav extends Component {
   render() {
     return (
       <div className="app-nav">
-        <IconFinder className="menu" name="menu" />
+        <div className="menu">
+          <IconFinder name="menu" />
+        </div>
         <IconFinder className="avatar" name="avatar" href="#home" />
       </div>
     );

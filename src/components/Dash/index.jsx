@@ -14,7 +14,7 @@ export default class Dash extends Component {
   render() {
     return (
       <div className="dash-page">
-        <DashHeader changeAppState={this.props} />
+        <DashHeader changeAppState={this.props} openModal={this.openModal} />
         <br />
         <Container>
           {this.state.project.map((element) => (

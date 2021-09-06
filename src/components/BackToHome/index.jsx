@@ -11,15 +11,15 @@ export default class BackToHome extends Component {
   };
   render() {
     return (
-      <div>
+      <span>
         <Button
           className="back-button"
           onClick={this.handleClick}
           variant="link"
         >
-          &larr; BACK
+          &larr;
         </Button>
-      </div>
+      </span>
     );
   }
 }

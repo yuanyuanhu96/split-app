@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Project from '../Project';
+import IconFinder from '../IconFinder';
 import './index.css';
 
 export default class ProjCard extends Component {
-  handleClick = () => {
+  cardClicked = () => {
     this.props.changeAppState.setState({
       load: <Project changeAppState={this.props.changeAppState} />,
     });
@@ -13,15 +14,16 @@ export default class ProjCard extends Component {
   render() {
     return (
       <div>
-        <Card className="proj-card">
+        <Card className="proj-card svg-button" onClick={this.cardClicked}>
           <Card.Body>
             <Card.Title>Trip name</Card.Title>
             <Card.Text>
               With supporting text below as a natural lead-in to additional
               content.
             </Card.Text>
-            <Button onClick={this.handleClick} variant="link">
-              Go to Trip
+            <Button variant="link">
+              Copy Link
+              <IconFinder name="link" />
             </Button>
           </Card.Body>
         </Card>

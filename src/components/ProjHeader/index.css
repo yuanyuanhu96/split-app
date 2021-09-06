@@ -2,3 +2,15 @@
   background: #f7e7ff;
   margin-bottom: 20px;
 }
+
+/* need a better way to justify content */
+.inline-h {
+  position: relative;
+  top: 5px;
+  display: inline;
+}
+
+.proj-nav {
+  padding: 20px 0;
+  justify-content: center;
+}
