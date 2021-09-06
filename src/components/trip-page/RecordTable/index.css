@@ -3,8 +3,20 @@
 }
 
 .process-row {
-  background-color: #f3f3f3;
+  background-color: #f7f2fa;
 }
+
+.process-row > * {
+  padding: 20px 0;
+}
+
 .new-item-row {
   border: none;
+  justify-content: center;
+  justify-self: center;
+}
+
+.table-body {
+  border-radius: 10px;
+  background-color: white;
 }

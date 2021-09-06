@@ -8,7 +8,7 @@ export default class RecordTable extends Component {
   render() {
     return (
       <div className="scroll-table">
-        <Table className="record-table" bordered responsive>
+        <Table className="record-table" borderless responsive>
           {/* Table header is friends name */}
           <thead>
             <tr>
@@ -20,7 +20,7 @@ export default class RecordTable extends Component {
           </thead>
 
           {/* Table rows is Items and money paied by earch person */}
-          <tbody>
+          <tbody className="table-body">
             {this.props.linedItems.map((element) => (
               <Item
                 key={element.time}
@@ -36,15 +36,14 @@ export default class RecordTable extends Component {
             {/* Add new item button take a row */}
             <tr className="process-row">
               <td></td>
-              <td>
-                <b>Total Paid</b>
-              </td>
+              <td> Total Paid</td>
               {this.props.sum.map((data) => (
                 <td>{data}</td>
               ))}
             </tr>
             <tr>
-              <td colSpan="5" class="new-item-row">
+              <td></td>
+              <td colSpan="4" class="new-item-row">
                 <Button onClick={this.props.addItem} variant="link">
                   + New Item
                 </Button>

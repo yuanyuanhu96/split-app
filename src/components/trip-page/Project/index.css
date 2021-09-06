@@ -3,3 +3,14 @@
   justify-content: flex-end;
 }
 
+.trip-page {
+  background-color: #f9fafb;
+}
+
+/* neet to be merged with button group in modal */
+
+.action-block {
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: white;
+}

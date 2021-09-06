@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Project from '../Project';
-import Nav from 'react-bootstrap/Nav';
 
 import Container from 'react-bootstrap/Container';
 import BackToHome from '../BackToHome';
@@ -20,22 +19,9 @@ export default class ProjCard extends Component {
           <Container>
             <div className="proj-nav">
               <BackToHome changeAppState={this.props.changeAppState} />
-              <h3 className="inline-h">{this.props.projectName}</h3>
+              <h4 className="inline-h">{this.props.projectName}</h4>
             </div>
             {/* Navigation tab switch between record and payment */}
-            <Nav variant="tabs" defaultActiveKey="/record">
-              <Nav.Item>
-                <Nav.Link onClick={this.goToRecord} href="/record">
-                  Record
-                </Nav.Link>
-              </Nav.Item>
-
-              <Nav.Item>
-                <Nav.Link onClick={this.goToPayment} href="/payment">
-                  Payment
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
           </Container>
         </header>
       </div>

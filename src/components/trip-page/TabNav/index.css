@@ -1,0 +1,27 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #d0d4d9;
+  background: white;
+}
+
+.tab-active {
+  padding: 6px 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: white;
+  font-weight: 500;
+  color: #5d39b7;
+  border-bottom: solid #5d39b7;
+}
+.tab-rest {
+  padding: 6px 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: white;
+  font-weight: 500;
+  color: #1b1e20;
+  border-bottom: none;
+}

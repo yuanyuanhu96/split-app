@@ -8,12 +8,28 @@
   align-items: center;
 }
 
+/* .record-row {
+  background-color: white;
+  border-bottom: 1px #7f8a94;
+} */
+
 .record-row .delete-button {
   border: none;
   visibility: hidden;
+  background-color: #ffe2e5;
+  color: #cd0014;
+}
+.record-row {
+  border-bottom: 1px solid #f7f2fa;
+
+  /* margin: 10px; */
 }
 
 .record-row:hover .delete-button {
   border: none;
   visibility: visible;
+}
+
+.record-row:hover {
+  background-color: #f9fafb;
 }

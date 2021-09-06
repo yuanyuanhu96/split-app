@@ -1,6 +1,5 @@
 .project-header {
-  background: #f7e7ff;
-  margin-bottom: 20px;
+  background: white;
 }
 
 /* need a better way to justify content */
@@ -13,4 +12,5 @@
 .proj-nav {
   padding: 20px 0;
   justify-content: center;
+  
 }

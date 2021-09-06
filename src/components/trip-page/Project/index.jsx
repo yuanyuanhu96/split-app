@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import RecordTable from '../RecordTable';
 import Payment from '../Payment';
 import ProjHeader from '../ProjHeader';
+import TabNav from '../TabNav';
+
 import Result from '../Result';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -83,13 +85,17 @@ export default class Project extends Component {
 
   render() {
     return (
-      <div>
+      <div className="trip-page">
         {/* Header contains project name and Navigation */}
 
         <ProjHeader
           projectName={this.state.projectName}
           changeAppState={this.props.changeAppState}
         />
+
+        <TabNav />
+
+        <br />
 
         <Container>
           {/* Project content contains record table */}
@@ -102,15 +108,21 @@ export default class Project extends Component {
             editItem={this.editItem}
             project={this}
           />
+          <br />
 
           <Result result={this.state.result} />
-
-          <div class="button-group-end">
-            <Button variant="primary" onClick={this.goToPayment}>
-              Start Payment
-            </Button>
-          </div>
+          <br />
         </Container>
+
+        <div className="action-block">
+          <Container>
+            <div class="button-group-end">
+              <Button variant="primary" onClick={this.goToPayment}>
+                Start Payment
+              </Button>
+            </div>
+          </Container>
+        </div>
       </div>
     );
   }
