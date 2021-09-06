@@ -11,7 +11,7 @@ This app is a side project I started recently. The design was inspired by my exp
 ## Demo
 
 <p align="center">
-  <img src="https://yuanyuanhu96.github.io/share/domo.gif" />
+  <img src="https://yuanyuanhu96.github.io/share/demo.gif" />
 </p>
 
 
