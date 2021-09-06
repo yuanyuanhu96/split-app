@@ -12,6 +12,5 @@ This app is a side project I started recently. The design was inspired by my exp
 ![ui-audit](https://yuanyuanhu96.github.io/ui-audit.png)
 
 ## Demo
-![split-demo](https://yuanyuanhu96.github.io/split-demo.gif)
 
 
