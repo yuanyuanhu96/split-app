@@ -3,10 +3,12 @@ import RecordTable from '../RecordTable';
 import Payment from '../Payment';
 import ProjHeader from '../ProjHeader';
 import TabNav from '../TabNav';
-
 import Result from '../Result';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+
+import Visualization from '../Visualization';
+
 import './index.css';
 import calculator from './calculator';
 
@@ -76,11 +78,11 @@ export default class Project extends Component {
   };
 
   goToPayment = () => {
-    this.setState({ page: <Payment /> });
+    this.setState({ isRecord: false });
   };
 
   goToRecord = () => {
-    this.setState({ page: <RecordTable /> });
+    this.setState({ isRecord: true });
   };
 
   render() {
@@ -93,26 +95,35 @@ export default class Project extends Component {
           changeAppState={this.props.changeAppState}
         />
 
-        <TabNav />
+        <TabNav
+          goToPayment={this.goToPayment}
+          goToRecord={this.goToRecord}
+          isRecord={this.state.isRecord}
+        />
 
         <br />
 
         <Container>
-          {/* Project content contains record table */}
-          <RecordTable
-            people={this.state.people}
-            linedItems={this.state.linedItems}
-            sum={this.state.sum}
-            addItem={this.addItem}
-            deleteItem={this.deleteItem}
-            editItem={this.editItem}
-            project={this}
-          />
+          {/* Project content conditional rendering  */}
+          {this.state.isRecord ? (
+            <RecordTable
+              people={this.state.people}
+              linedItems={this.state.linedItems}
+              sum={this.state.sum}
+              addItem={this.addItem}
+              deleteItem={this.deleteItem}
+              editItem={this.editItem}
+              project={this}
+            />
+          ) : (
+            <Visualization />
+          )}
           <br />
 
           <Result result={this.state.result} />
-          <br />
         </Container>
+
+        {/* action area */}
 
         <div className="action-block">
           <Container>

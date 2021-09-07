@@ -1,0 +1,9 @@
+.vis-wrapper {
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+}
+
+.result-vis {
+  max-width: 600px;
+}
