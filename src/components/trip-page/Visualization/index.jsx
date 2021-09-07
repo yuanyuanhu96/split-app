@@ -7,9 +7,9 @@ import './index.css';
 export default class index extends Component {
   render() {
     const people = [
-      { name: 'Yuanyuan', x: 100, y: 100, color: '#5D39B7' },
-      { name: 'Sarah', x: 400, y: 100, color: '#7F8A94' },
-      { name: 'Sarah', x: 259, y: 330, color: '#7F8A94' },
+      { name: 'Yuanyuan', x: 60, y: 100, color: '#5D39B7' },
+      { name: 'Sarah', x: 340, y: 100, color: '#7F8A94' },
+      { name: 'Sarah', x: 200, y: 330, color: '#7F8A94' },
     ];
 
     const box = { width: 80, height: 32 };
@@ -27,7 +27,7 @@ export default class index extends Component {
           version="1.1"
           x="0px"
           y="0px"
-          viewBox="0 0 500 400"
+          viewBox="0 0 400 400"
           height="100%"
           width="100%"
         >
