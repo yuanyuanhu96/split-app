@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecordTable from '../RecordTable';
-import Payment from '../Payment';
+import SecondaryNav from '../SecondaryNav';
+
 import ProjHeader from '../ProjHeader';
 import TabNav from '../TabNav';
 import Result from '../Result';
@@ -90,7 +91,7 @@ export default class Project extends Component {
       <div className="trip-page">
         {/* Header contains project name and Navigation */}
 
-        <ProjHeader
+        <SecondaryNav
           projectName={this.state.projectName}
           changeAppState={this.props.changeAppState}
         />
@@ -118,7 +119,6 @@ export default class Project extends Component {
           ) : (
             <Visualization />
           )}
-          <br />
 
           <Result result={this.state.result} />
         </Container>

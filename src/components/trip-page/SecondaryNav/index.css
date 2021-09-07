@@ -1,0 +1,19 @@
+.secondary-nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+
+.secondary-nav > .menu {
+  flex: auto;
+  text-align: left;
+}
+.secondary-nav > .avatar {
+  flex: 36px;
+  text-align: right;
+}
+
+.whtte-bg {
+  background-color: white;
+}
