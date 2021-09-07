@@ -10,7 +10,7 @@ This app is a side project I started recently. The design was inspired by my exp
 
 ## Demo
 
-![demo](https://yuanyuanhu96.github.io/share/demo.gif)
+![demo](https://yuanyuanhu96.github.io/share/demo-v4.gif)
 
 
 
