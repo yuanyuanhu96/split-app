@@ -17,4 +17,4 @@ This app is a side project I started recently. The design was inspired by my exp
 
 ## Design System
 
-![demo](https://yuanyuanhu96.github.io/share/design-system.png)
+![design-system](https://yuanyuanhu96.github.io/share/design-system.png)
